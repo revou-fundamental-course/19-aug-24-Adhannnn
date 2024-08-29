@@ -20,6 +20,9 @@ function ValidateForm() {
         // untuk menset popup jika data yang diisi tidak sesuai //
         showpopup(errpopup);
     } else if (selectedBirth > now)  {
+        // selectedBirth mengambil data input birth //
+        // now berarti mengambil data waktu di hari ini //
+        // untuk menset popup jika tanggal lahir yang dimasukkan tidak boleh melebihi dari hari itu juga //
         showpopup(birthpopup);
     } else {
         // untuk menset popup jika data berhasil di submit //
