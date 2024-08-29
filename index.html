@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="/week1/img/wallpapersden.com_small-memory_1366x768.jpg">
+</head>
+<body>
+    <nav class="container">
+        <div class="logo-border">
+            <img src="img/scenic-river-bridge-unnla87r6bnw7pev.jpg" alt="Ini Logo">
+
+        </div>
+        <button class="bar"><a href="">Home</a></button>
+        <button class="bar"><a href="#facilitations">Our Facilitation</a></button>
+        <button class="bar"><a href="#message">Message Us</a></button>
+        <button class="bar"><a href="">Logout</a></button>
+    </nav>
+    <header class="header">
+        <p>Hi <span id="name"></span>, Welcome To Website</p>
+    </header>
+    <main class="content">
+        <div class="border-image">
+                <img class="img active" src="img/school_02.jpg" alt="" >
+                <img class="img active" src="img/Dollar_Academy_WEB-01.webp" alt="">
+                <img class="img active" src="img/Elementary_classroom_in_Alaska.jpg" alt="">
+        </div>
+        <h1 id="facilitations">Our Facilitation</h1>
+        <div class="border-second">
+            <div class="secborder-content-one" data-aos="fade-right" data-aos-duration="2000">
+                <p>Swimming Pool</p>
+            </div>
+            <div class="secborder-content-two" data-aos="fade-up" data-aos-duration="2000">
+                <p>Gym</p>
+            </div>
+            <div class="secborder-content-three" data-aos="fade-left" data-aos-duration="2000">
+                <p>Classroom</p>
+            </div>
+        </div>
+        <hr>
+        <h1 id="message">Message Us</h1>
+        <div class="border-third">
+            <div class="form">
+                <form id="form" name="form" action="" method="get" onsubmit="ValidateForm()">
+                    <table>
+                        <tr>
+                            <td>Nama</td>
+                            <td>:</td>
+                            <td><input type="text" id="input-name" name="input-name" placeholder="Nama Anda"></td>
+                        </tr>
+                        <tr> 
+                            <td>Tanggal Lahir</td>
+                            <td>:</td>
+                            <td><input type="date" id="input-birth" name="input-birth"></td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Kelamin</td>
+                            <td>:</td>
+                            <td>
+                                <input type="radio" name="gender" id="input-gender" value="Laki - laki">
+                                <label for="male">Laki - laki</label>
+                                <input type="radio" name="gender" id="input-gender" value="Perempuan">
+                                <label for="female">Perempuan</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="pesan">Pesan</td>
+                            <td class="pesan">:</td>
+                            <td>
+                                <textarea name="message-input" id="input-pesan" rows="5" cols="43"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="text-align: center;">
+                                <button type="submit" id="submitbtn" class="submitbtn" onclick="ValidateForm()" style="width: 100%;">Kirim</button>
+                            </td>
+                        </tr>
+                    </table> 
+                </form>
+            </div>
+            <div class="table">
+                <div class="border-result">
+                    <div class="result">
+                        <table>
+                            <tr>
+                                <td id="bold">Current Time</td>
+                                <td id="bold">:</td>
+                                <td id="time-input"></td>
+                            </tr>
+                            <tr>
+                                <td id="bold">Nama</td>
+                                <td id="bold">:</td>
+                                <td id="name-input"></td>
+                            </tr>
+                            <tr>
+                                <td id="bold">Tanggal Lahir</td>
+                                <td id="bold">:</td>
+                                <td id="birth-input"></td>
+                            </tr>
+                            <tr>
+                                <td id="bold">Jenis Kelamin</td>
+                                <td id="bold">:</td>
+                                <td id="gender-input"></td>
+                            </tr>
+                            <tr>
+                                <td id="bold">Pesan</td>
+                                <td id="bold">:</td>
+                                <td id="message-input"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="errorpopup" id="errorpopup">
+            <h2>Error !</h2>
+            <p>The data must be filled in !</p>
+            <button type="button" class="close-button">Ok</button>
+        </div>
+        <div class="successpopup" id="sucesspopup">
+            <h2>Thank You !</h2>
+            <p>Your data has been succesfully submitted !</p>
+            <button type="button" id="close-button-suc" class="close-button">Ok</button>
+        </div>
+    </main>
+    <br><br><hr>
+    <footer>
+        By Wahyu Ramadhan
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
