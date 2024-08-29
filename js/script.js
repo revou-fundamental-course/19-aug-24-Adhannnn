@@ -1,4 +1,4 @@
-document.forms["form"].addEventListener("submit", function(event) {
+document.forms["form"].addEventListener("submit", function (event) {
     event.preventDefault();
     ValidateForm();
 });
@@ -11,18 +11,23 @@ function ValidateForm() {
     let message = document.forms["form"]["message-input"].value;
     const errpopup = document.getElementById("errorpopup");
     const sucpopup = document.getElementById("sucesspopup");
+    const birthpopup = document.getElementById("birthpopup");
     const getDay = new Date().toLocaleString();
+    const now = new Date();
+    const selectedBirth = new Date(birth);
 
     if (name == "" || birth == "" || gender == "" || message == "") {
         // untuk menset popup jika data yang diisi tidak sesuai //
         showpopup(errpopup);
+    } else if (selectedBirth > now)  {
+        showpopup(birthpopup);
     } else {
         // untuk menset popup jika data berhasil di submit //
         showpopup(sucpopup);
         SetSender(name, birth, gender, message, getDay);
-        
+
         // mengatur pada input, jika user selesai dalam mengisi form, maka input akan di reset //
-        setTimeout(function() {
+        setTimeout(function () {
             document.forms["form"].reset();
         }, 500);
     }
@@ -44,13 +49,13 @@ function showpopup(ShowPopUp) {
     ShowPopUp.classList.add("open-popup");
 
     // mengatur pergerakan dari form ke popup menjadi smooth //
-    ShowPopUp.scrollIntoView({behavior: "smooth", block: "center"});
+    ShowPopUp.scrollIntoView({ behavior: "smooth", block: "center" });
 
     let closebtn = ShowPopUp.querySelector(".close-button");
 
-    closebtn.addEventListener("click", function() {
+    closebtn.addEventListener("click", function () {
         ShowPopUp.classList.remove("open-popup");
-    }, {once: true});
+    }, { once: true });
 }
 
 // untuk banner image //
